@@ -1,0 +1,220 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>高考网</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'home_link/bs/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="icon" href="{% static 'home_link/favicon.ico' %}">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.5/examples/cover/cover.css" rel="stylesheet">
+
+  </head>
+  <!--
+  <body class="text-center" background="{% static 'home_link/img4.jpg' %}" style=" background-repeat:no-repeat; background-size:100% 100%; background-attachment: fixed;">
+  -->
+  <body class="text-center" background="{% static 'home_link/img4.jpg' %}" style=" background-repeat:no-repeat; background-size:100% 100%; background-attachment: fixed;">
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">NUEAGUC</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" href="../">Home</a>
+        <a class="nav-link" href="../grade/">Query</a>
+        <a class="nav-link active" href="#">Predict</a>
+      </nav>
+    </div>
+  </header>
+
+      <!--
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Predict</h1>
+    <p class="lead">The system supports the user to input the expected score of college entrance examination in the text box below to predict the total ranking of college entrance examination.</p>
+  </main>
+  -->
+
+  <div class=" mb-3 text-center">
+    <div class="mb-4 shadow-sm">
+      <div class="">
+        <form method="POST" class="form-horizontal" role='form' action="{% url 'home_link:house_yuce' %}">
+          {% csrf_token %}
+            <p></p>
+            <p><h3>请输入分数：</h3></p>
+            {{ form.yc | as_crispy_field }}
+          {% if yc != -1%}
+            <div>
+                <p>预测分数：{{ fs }}</p>
+                <p>排名：{{ yc }}</p>
+            </div>
+          {% endif %}
+           <div align="center" class="form-group">
+               <div class="col-md-12">
+                    <button type="submit" style="width: 300px; height: 50px;" class="btn btn-lg btn-block btn-outline-primary form-control">Get it</button>
+               </div>
+           </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mastfoot mt-auto">
+      <h3 class="cover-heading"><a href="#">Team members</a></h3>
+      <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#696969 SIZE=1>
+      <div class="row">
+      <div class="col-6 col-md">
+        <h5>Leader</h5>
+        <ul class="list-unstyled text-small">
+          <li><a href="#">常佳宁</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Members</h5>
+        <ul class="list-unstyled text-small">
+          <li><a href="#">李阳齐</a></li>
+          <li><a href="#">陈江海</a></li>
+          <li><a href="#">邹越洋</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Members</h5>
+        <ul class="list-unstyled text-small">
+          <li><a href="#">龙正福</a></li>
+          <li><a href="#">白志强</a></li>
+          <li><a href="#">范伟</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Members</h5>
+        <ul class="list-unstyled text-small">
+          <li><a href="#">陈世龙</a></li>
+          <li><a href="#">金艳杰</a></li>
+          <li><a href="#">李涛</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="inner">
+      <p class="copyright">Copyright &copy; 2020 - <a href="http://liang-sheng.site/">凉生</a></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
+
+<!--
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Predict</h4>
+      </div>
+      <div class="card-body">
+        <form method="POST" class="form-horizontal" role='form' action="{% url 'home_link:house_yuce' %}">
+          {% csrf_token %}
+            <p>请输入分数：{{ form.yc }}</p>
+          {% if yc != -1%}
+            <div>
+                <p>预测分数：{{ fs }}</p>
+                <p>排名：{{ yc }}</p>
+            </div>
+          {% endif %}
+           <div align="center" class="form-group">
+               <div class="col-md-12">
+                    <button type="submit" style="width: 300px; height: 50px;" class="btn btn-lg btn-block btn-outline-primary form-control">Get it</button>
+               </div>
+           </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="pt-4 my-md-5 pt-md-5 border-top mastfoot mt-auto ">
+    <div class="row">
+     <div class="col-6 col-md">
+        <h5>Membership</h5>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Leader</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted">常佳宁</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Members</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted">李阳齐</a></li>
+          <li><a class="text-muted">陈江海</a></li>
+          <li><a class="text-muted">龙正福</a></li>
+          <li><a class="text-muted">范伟</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Members</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted">邹越洋</a></li>
+          <li><a class="text-muted">白志强</a></li>
+          <li><a class="text-muted">陈世龙</a></li>
+          <li><a class="text-muted">金艳杰</a></li>
+          <li><a class="text-muted">李涛</a></li>
+        </ul>
+      </div>
+    </div>
+    <div align="center" class="inner">
+       <small class="d-block mb-3 text-muted"><p class="copyright">&copy; 2020 - <a href="http://liang-sheng.site/">凉生</a></p></small>
+    </div>
+  </footer>
+</div>
+-->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预测分数</title>
+    <form method="POST" class="form-horizontal" role='form' action="{% url 'home_link:house_yuce' %}">
+          {% csrf_token %}
+          {{ form.yc }}
+           <div class="form-group">
+               <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary form-control">预测</button>
+               </div>
+           </div>
+      </form>
+        {% if yc != -1%}
+            预测排名：{{ yc }}
+        {% endif %}
+      <a href="../grade/">
+          <button class="btn btn-danger form-control">爬取</button>
+      </a>
+</head>
+<body >
+
+</body>
+</html>
+-->

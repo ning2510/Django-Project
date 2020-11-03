@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>高考网</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'home_link/bs/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="icon" href="{% static 'home_link/favicon.ico' %}">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.5/examples/cover/cover.css" rel="stylesheet">
+
+  </head>
+  <!--
+  <body class="text-center" background="{% static 'home_link/img4.jpg' %}" style=" background-repeat:no-repeat; background-size:100% 100%; background-attachment: fixed;">
+  -->
+  <body class="text-center" background="https://w.wallhaven.cc/full/4o/wallhaven-4opk99.jpg" style=" background-repeat:no-repeat; background-size:100% 100%; background-attachment: fixed;">
+
+ <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">NUEAGUC</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link" href="grade/">Query</a>
+        <a class="nav-link" href="pre/">Predict</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Welcome to there.</h1>
+    <p class="lead">The system can query the science scores of college entrance examination in recent years and support the prediction of ranking according to the results.</p>
+    <p class="lead">
+      <a href="grade/" class="btn btn-lg btn-secondary">Just do it</a>
+    </p>
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p class="copyright">Copyright &copy; 2020 - <a href="http://liang-sheng.site/">凉生</a></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
