@@ -1,6 +1,6 @@
 [[source]]
 name = "pypi"
-url = "https://pypi.org/simple"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
 verify_ssl = true
 
 [dev-packages]
@@ -17,6 +17,7 @@ numpy = "*"
 scipy = {index = "https://pypi.mirrors.ustc.edu.cn/simple/", version = "*"}
 sklearn = {index = "https://pypi.mirrors.ustc.edu.cn/simple/", version = "*"}
 django-crispy-forms = {index = "http://pypi.douban.com/simple/", version = "*"}
+gunicorn = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.6"
